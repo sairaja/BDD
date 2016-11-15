@@ -31,7 +31,7 @@ public class Util {
 	}
 	
 	
-	public void wait_For_while(int seconds) throws InterruptedException{
+	public void wait(int seconds) throws InterruptedException{
 		
 		
 		for (int i = 0; i < seconds; i++) {

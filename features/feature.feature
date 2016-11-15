@@ -5,6 +5,6 @@ Feature: Some terse yet descriptive text of what is desired
 
 Scenario: Login successful
 
-Given user navigates to Facebook
+Given user navigates to Amazon
 When I enter correct username and password
 Then login should be successful
