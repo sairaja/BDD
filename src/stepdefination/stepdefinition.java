@@ -13,8 +13,8 @@ public class stepdefinition extends Util {
 
 	WebDriver driver =new FirefoxDriver();
 	
-	@Given("^user navigates to Facebook$")
-	public void user_navigates_to_Facebook() throws Throwable {
+	@Given("^user navigates to Amazon$")
+	public void user_navigates_to_Amazon() throws Throwable {
 		
 		driver.get(getproperty("url"));
 	}
