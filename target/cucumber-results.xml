@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="27.907368">
+<testcase classname="Some terse yet descriptive text of what is desired" name="Login successful" time="27.907368">
+<system-out><![CDATA[Given user navigates to Amazon..............................................passed
+When I enter correct username and password..................................passed
+Then login should be successful.............................................passed
+]]></system-out>
+</testcase>
+</testsuite>

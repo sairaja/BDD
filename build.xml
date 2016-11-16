@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="BDD">
+    <property environment="env"/>
+    <property name="ECLIPSE_HOME" value="E:/EclipseNeon/eclipse/"/>
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="JUnit 4.libraryclasspath">
+        <pathelement location="../../.p2/pool/plugins/org.junit_4.12.0.v201504281640/junit.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.hamcrest.core_1.3.0.v201303031735.jar"/>
+    </path>
+    <path id="TestNG.libraryclasspath">
+        <pathelement location="../../.p2/pool/plugins/org.testng.eclipse_6.9.13.201609291640/lib/testng.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.testng.eclipse_6.9.13.201609291640/lib/jcommander.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.testng.eclipse_6.9.13.201609291640/lib/bsh-2.0b4.jar"/>
+        <pathelement location="../../.p2/pool/plugins/org.testng.eclipse_6.9.13.201609291640/lib/snakeyaml.jar"/>
+    </path>
+    <path id="BDD.classpath">
+        <pathelement location="bin"/>
+        <path refid="JUnit 4.libraryclasspath"/>
+        <path refid="TestNG.libraryclasspath"/>
+        <pathelement location="libs/cglib-nodep-3.2.4.jar"/>
+        <pathelement location="libs/client-combined-3.0.1-nodeps.jar"/>
+        <pathelement location="libs/commons-codec-1.10.jar"/>
+        <pathelement location="libs/commons-exec-1.3.jar"/>
+        <pathelement location="libs/commons-io-2.5.jar"/>
+        <pathelement location="libs/commons-lang3-3.4.jar"/>
+        <pathelement location="libs/commons-logging-1.2.jar"/>
+        <pathelement location="libs/cssparser-0.9.20.jar"/>
+        <pathelement location="libs/cucumber-core-1.2.3.jar"/>
+        <pathelement location="libs/cucumber-html-0.2.3.jar"/>
+        <pathelement location="libs/cucumber-java-1.2.4.jar"/>
+        <pathelement location="libs/cucumber-junit-1.2.4.jar"/>
+        <pathelement location="libs/cucumber-jvm-deps-1.0.5.jar"/>
+        <pathelement location="libs/gherkin-2.12.2.jar"/>
+        <pathelement location="libs/gson-2.3.1.jar"/>
+        <pathelement location="libs/guava-19.0.jar"/>
+        <pathelement location="libs/hamcrest-core-1.3.jar"/>
+        <pathelement location="libs/hamcrest-library-1.3.jar"/>
+        <pathelement location="libs/htmlunit-2.23.jar"/>
+        <pathelement location="libs/htmlunit-core-js-2.23.jar"/>
+        <pathelement location="libs/httpclient-4.5.2.jar"/>
+        <pathelement location="libs/httpcore-4.4.4.jar"/>
+        <pathelement location="libs/httpmime-4.5.2.jar"/>
+        <pathelement location="libs/javax.servlet-api-3.1.0.jar"/>
+        <pathelement location="libs/jchronic-0.2.6.jar"/>
+        <pathelement location="libs/jetty-io-9.2.13.v20150730.jar"/>
+        <pathelement location="libs/jetty-util-9.2.13.v20150730.jar"/>
+        <pathelement location="libs/jna-4.1.0.jar"/>
+        <pathelement location="libs/jna-platform-4.1.0.jar"/>
+        <pathelement location="libs/junit-4.12.jar"/>
+        <pathelement location="libs/neko-htmlunit-2.23.jar"/>
+        <pathelement location="libs/netty-3.5.7.Final.jar"/>
+        <pathelement location="libs/phantomjsdriver-1.3.0.jar"/>
+        <pathelement location="libs/sac-1.3.jar"/>
+        <pathelement location="libs/selenium-server-standalone-3.0.1.jar"/>
+        <pathelement location="libs/serializer-2.7.2.jar"/>
+        <pathelement location="libs/websocket-api-9.2.15.v20160210.jar"/>
+        <pathelement location="libs/websocket-client-9.2.15.v20160210.jar"/>
+        <pathelement location="libs/websocket-common-9.2.15.v20160210.jar"/>
+        <pathelement location="libs/xalan-2.7.2.jar"/>
+        <pathelement location="libs/xercesImpl-2.11.0.jar"/>
+        <pathelement location="libs/xml-apis-1.4.01.jar"/>
+    </path>
+    <target name="init">
+        <mkdir dir="bin"/>
+        <copy includeemptydirs="false" todir="bin">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="bin"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+       <!--  <javac debug="true" debuglevel="${debuglevel}" destdir="bin" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="BDD.classpath"/>
+        </javac> -->
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="AutomationRunner (1)">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="AutomationRunner.AutomationRunner" todir="${junit.output.dir}"/>
+            <jvmarg line="-ea"/>
+            <classpath refid="BDD.classpath"/>
+        </junit>
+    </target>
+    <target name="junitreport">
+        <junitreport todir="${junit.output.dir}">
+            <fileset dir="${junit.output.dir}">
+                <include name="TEST-*.xml"/>
+            </fileset>
+            <report format="frames" todir="${junit.output.dir}"/>
+        </junitreport>
+    </target>
+</project>
